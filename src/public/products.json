@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "name": "Nueva Chicago",
+        "price": "2 BTC",
+        "href": "#",
+        "images": [
+            {
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Escudo_del_Club_Atl%C3%A9tico_Nueva_Chicago.svg/1200px-Escudo_del_Club_Atl%C3%A9tico_Nueva_Chicago.svg.png",
+                "alt": "Escudo nueva Chicago."
+            },
+            {
+                "src": "https://imgs.search.brave.com/sHhyf_fqeuR777bVUFH76b2eZl55oDvqMBKcEgF7xeA/rs:fit:319:319:1/g:ce/aHR0cHM6Ly9wYnMu/dHdpbWcuY29tL3By/b2ZpbGVfaW1hZ2Vz/LzYyMjg4NDc1MTUx/NTQ1NTQ4OC9HQ1pD/bDJLQl80MDB4NDAw/LmpwZw",
+                "alt": "Torito nueva chicago."
+            },
+            {
+                "src": "https://imgs.search.brave.com/fgyCEv9L0VB4m0gIlu2d-lq88JXvZwrLMcQg1TFo5mM/rs:fit:620:620:1/g:ce/aHR0cDovL2JhcnJh/YnJhdmEubmV0L2lt/Zy9iYXJyYXMtYnJh/dmFzL2xvcy1waWJl/cy1kZS1jaGljYWdv/LW51ZXZhLWNoaWNh/Z28vbG9zLXBpYmVz/LWRlLWNoaWNhZ28t/bnVldmEtY2hpY2Fn/by02Ny1iYXJyYWJy/YXZhLW5ldC5qcGc",
+                "alt": "Cancha nueva chicago"
+            },
+            {
+                "src": "https://imgs.search.brave.com/91rgAmPGIV5gT6eystYOsYLKtQ979izTdtqhNM35zQs/rs:fit:943:500:1/g:ce/aHR0cHM6Ly80LmJw/LmJsb2dzcG90LmNv/bS8tZ0NfQWxRbkhx/ZnMvV1YtcHhMTl9Z/eUkvQUFBQUFBQUFF/bXMvalB0ZER4U0Zv/TEVmUG1ibzR4R0xh/RmgwcWdlRE5vZnJ3/Q0xjQkdBcy9zMTYw/MC9OdWV2YSUyQkNo/aWNhZ28lMkIxOTkw/JTJCMTk5MVBsYW50/aWxsYS5qcGc",
+                "alt": "Plantel nueva chicago"
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "id": 1,
+                "name": "AFA",
+                "href": "#"
+            },
+            {
+                "id": 2,
+                "name": "Primera B",
+                "href": "#"
+            }
+        ],
+        "colors": [
+            {
+                "name": "White",
+                "class": "bg-white",
+                "selectedClass": "ring-gray-400"
+            },
+            {
+                "name": "Gray",
+                "class": "bg-chacaGreen",
+                "selectedClass": "ring-chacaGreen"
+            },
+            {
+                "name": "Black",
+                "class": "bg-black",
+                "selectedClass": "ring-gray-900"
+            }
+        ],
+        "sizes": [
+            {
+                "name": "Primera",
+                "inStock": false
+            },
+            {
+                "name": "Primera B",
+                "inStock": true
+            },
+            {
+                "name": "Primera C",
+                "inStock": true
+            },
+            {
+                "name": "Primera D",
+                "inStock": true
+            }
+        ],
+        "description": "El Club Atlético Nueva Chicago, conocido como Nueva Chicago o mencionado popularmente como Chicago,5​ es una institución deportiva argentina fundada el 1 de julio de 1911, con estadio y sede en el barrio de Mataderos, sudoeste de la Ciudad de Buenos Aires. Su principal actividad es el fútbol masculino profesional. Actualmente disputa la Primera Nacional, segunda categoría del fútbol argentino.",
+        "highlights": [
+            "Temporadas en Primera División: 18",
+            "Temporadas en Segunda División: 75 (récord)",
+            "Temporadas en Tercera División: 16",
+            "Temporadas en Cuarta División: 2"
+        ],
+        "details": "El producto incluye la sede, el Estadio Nueva Chicago, el primer equipo y las divisiones inferiores ",
+        "reviews": {
+            "href": "#",
+            "average": 4,
+            "totalCount": 117
+        }
+    }
+]
