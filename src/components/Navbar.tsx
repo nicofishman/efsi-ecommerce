@@ -4,6 +4,7 @@ import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@her
 import React, { FC, Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import logo from '../public/logo.png';
 interface NavbarProps {
 
 };
@@ -300,7 +301,7 @@ const Navbar: FC<NavbarProps> = () => {
                                     <img
                                         alt=""
                                         className="h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                                        src={logo}
                                     />
                                 </Link>
                             </div>
