@@ -139,9 +139,9 @@ const Producto: FC<ProductoProps> = () => {
                                                 key={color.name}
                                                 className={({ active, checked }) =>
                                                     classNames(
-                                                        color.selectedClass,
                                                         active && checked ? 'ring ring-offset-1' : '',
                                                         !active && checked ? 'ring-2' : '',
+                                                        color.selectedClass,
                                                         '-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none'
                                                     )
                                                 }
@@ -157,6 +157,7 @@ const Producto: FC<ProductoProps> = () => {
                                                         color.class,
                                                         'h-8 w-8 border border-black border-opacity-10 rounded-full'
                                                     )}
+                                                    style={{ backgroundColor: color.color }}
                                                 />
                                             </RadioGroup.Option>
                                         ))}

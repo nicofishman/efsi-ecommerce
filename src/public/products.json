@@ -38,16 +38,19 @@
             {
                 "name": "White",
                 "class": "bg-white",
+                "color": "#fff",
                 "selectedClass": "ring-gray-400"
             },
             {
                 "name": "Gray",
                 "class": "bg-chacaGreen",
-                "selectedClass": "ring-chacaGreen"
+                "color": "#189647",
+                "selectedClass": "ring-green-500"
             },
             {
                 "name": "Black",
                 "class": "bg-black",
+                "color": "#000",
                 "selectedClass": "ring-gray-900"
             }
         ],
@@ -81,6 +84,180 @@
             "href": "#",
             "average": 4,
             "totalCount": 117
+        }
+    },
+    {
+        "id": 2,
+        "name": "Sacachispas",
+        "price": "10 ₪",
+        "href": "#",
+        "images": [
+            {
+                "src": "https://imgs.search.brave.com/oNiIZiJEvPWz3WRQtgWkpF8MYuKYjRTAM5GWr86ZGyY/rs:fit:500:500:1/g:ce/aHR0cHM6Ly9hMi5l/c3BuY2RuLmNvbS9j/b21iaW5lci9pP2lt/Zz0lMkZpJTJGdGVh/bWxvZ29zJTJGc29j/Y2VyJTJGNTAwJTJG/MTAwNTEucG5n",
+                "alt": "Escudo Sacachispas."
+            },
+            {
+                "src": "https://imgs.search.brave.com/LpGVQnTcn0XsvqxQwOlBLDOuZ7jSK-IpYUErtx9ji5o/rs:fit:970:545:1/g:ce/aHR0cDovL3d3dy5w/cmVuc2F0dWN1bWFu/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMC8wOC9zYWNh/Y2hpc3Bhcy1wZWRp/cmEtdW4tcHJlc3Rh/bW8tcGFyYS1pbnRl/bnRhci1jb250cmF0/YXItYS1tZXNzaV81/ZjQ1OTVhZWM3MDE2/LmpwZWc",
+                "alt": "Messi Sacachispas."
+            },
+            {
+                "src": "https://k61.kn3.net/taringa/9/5/E/5/9/3/MartinianoSabale/6F8.jpg",
+                "alt": "Cancha Sacachispas"
+            },
+            {
+                "src": "https://imgs.search.brave.com/GSeKCx923KBHlMgFEqo8OuaC7UYNq9CjvsKEnJFPTg0/rs:fit:1200:780:1/g:ce/aHR0cHM6Ly9zYWNh/Y2hpc3Bhc2ZjLmNv/bS5hci93cC1jb250/ZW50L3VwbG9hZHMv/MjAxOS8wOC9QbGFu/dGVsLTIwMTktU2Fj/YWNoaXNwYXMtRnV0/Ym9sLUNsdWIuanBn",
+                "alt": "Plantel Sacachispas"
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "id": 1,
+                "name": "AFA",
+                "href": "#"
+            },
+            {
+                "id": 2,
+                "name": "Primera B",
+                "href": "#"
+            }
+        ],
+        "colors": [
+            {
+                "name": "White",
+                "class": "bg-white",
+                "color": "#fff",
+                "selectedClass": "ring-gray-400"
+            },
+            {
+                "name": "Gray",
+                "class": "bg-sacaPurple",
+                "color": "#df99fc",
+                "selectedClass": "ring-green-500"
+            },
+            {
+                "name": "Black",
+                "class": "bg-black",
+                "color": "#000",
+                "selectedClass": "ring-gray-900"
+            }
+        ],
+        "sizes": [
+            {
+                "name": "Primera",
+                "inStock": false
+            },
+            {
+                "name": "Primera B",
+                "inStock": true
+            },
+            {
+                "name": "Primera C",
+                "inStock": true
+            },
+            {
+                "name": "Primera D",
+                "inStock": true
+            }
+        ],
+        "description": "Sacachispas Fútbol Club es una entidad Argentina fundada el 17 de octubre de 1948.\nSu nombre fue tomado de la película Pelota de trapo,2​ una adaptación de los relatos ficcionales que el periodista deportivo, escritor y guionista uruguayo Ricardo Lorenzo «Borocotó» publicaba en la revista El Gráfico bajo el título de «Apiladas».3​4​ El mismo Borocotó, socio fundador del club, fue quien ideó la camiseta y sus colores.\nEl 18 de diciembre de 2021 ascendió por primera vez a la Primera Nacional, segunda categoría para los equipos directamente afiliados a la Asociación del Fútbol Argentino. Su estadio lleva el nombre de Roberto \"Beto\" Larrosa y tiene capacidad de alrededor de unas 5000 personas.",
+        "highlights": [
+            "Temporadas en Primera División: 0",
+            "Temporadas en Segunda División: 1",
+            "Temporadas en Tercera División: 17",
+            "Temporadas en Cuarta División: 37"
+        ],
+        "details": "El producto incluye la sede, el Estadio Sacachispas, el primer equipo y las divisiones inferiores ",
+        "reviews": {
+            "href": "#",
+            "average": 4.5,
+            "totalCount": 10
+        }
+    },
+    {
+        "id": 3,
+        "name": "Waasland",
+        "price": "6 ﷼",
+        "href": "#",
+        "images": [
+            {
+                "src": "https://imgs.search.brave.com/tnH9FjZicmyUmVsXFmn5ZuiiQ6JDP7t4jXtLUMO-pfc/rs:fit:500:500:1/g:ce/aHR0cHM6Ly9jbGlw/YXJ0LmluZm8vaW1h/Z2VzL2Njb3ZlcnMv/MTUwMzQzODE5N3dh/YXNsYW5kLWJldmVy/ZW4tZm9vdGJhbGwt/bG9nby1wbmcucG5n",
+                "alt": "Escudo Waasland."
+            },
+            {
+                "src": "https://imgs.search.brave.com/ifk2uWpgKCCG5Cqdu6K0P6YR8-y4fptJIqmtwnweqFQ/rs:fit:710:444:1/g:ce/aHR0cHM6Ly9iZXN0/aHF3YWxscGFwZXJz/LmNvbS9VcGxvYWRz/LzIyLTEtMjAxOS83/ODA2NC90aHVtYjIt/d2Fhc2xhbmQtYmV2/ZXJlbi1mYy1maXJl/LWxvZ28tanVwaWxl/ci1sZWFndWUteWVs/bG93LWFuZC1ibHVl/LWxpbmVzLWJlbGdp/dW0tZm9vdGJhbGwt/Y2x1Yi5qcGc",
+                "alt": "Escudo Artístico Waasland."
+            },
+            {
+                "src": "https://imgs.search.brave.com/md_J3qvQHdJI6INGrY_xLR_bguL_ZZ5NU2KyFZoa2-Q/rs:fit:600:450:1/g:ce/aHR0cHM6Ly90LnJl/c2Z1LmNvbS9pbWdf/ZGF0YS9lc3RhZGlv/cy9vcmlnaW5hbF9u/ZXcvNTYxLmpwZz9z/aXplPTMwMHgmZHBy/PTIuNSYy",
+                "alt": "Cancha Waasland"
+            },
+            {
+                "src": "https://imgs.search.brave.com/rKuRgPy1QZYzoDqUYLK2yGAp6F4g_w-LPmvYD8hPn_8/rs:fit:1200:1080:1/g:ce/aHR0cDovL2Zvb3R3/YWxscy5jb20vd2Fs/bHBhcGVycy9jbHVi/cy9iZWxnaXVtL3dh/YXNsYW5kLWJldmVy/ZW4vd2Fhc2xhbmQt/YmV2ZXJlbi0xLmpw/Zw",
+                "alt": "Plantel Wasland"
+            }
+        ],
+        "breadcrumbs": [
+            {
+                "id": 1,
+                "name": "KBVB/URBSFA",
+                "href": "#"
+            },
+            {
+                "id": 2,
+                "name": "Challenger Pro League",
+                "href": "#"
+            }
+        ],
+        "colors": [
+            {
+                "name": "Gold",
+                "class": "bg-[#fdd403]",
+                "color": "#fdd403",
+                "selectedClass": "ring-gray-400"
+            },
+            {
+                "name": "Dark Blue",
+                "class": "bg-[#114a7f]",
+                "color": "#114a7f",
+                "selectedClass": "ring-green-500"
+            },
+            {
+                "name": "Red",
+                "class": "bg-[#ee1e30]",
+                "color": "#ee1e30",
+                "selectedClass": "ring-gray-900"
+            }
+        ],
+        "sizes": [
+            {
+                "name": "Jupiler Pro League",
+                "inStock": false
+            },
+            {
+                "name": "Challenger Pro League",
+                "inStock": true
+            },
+            {
+                "name": "Eerste Nationale",
+                "inStock": true
+            },
+            {
+                "name": "Tweede Afdeling",
+                "inStock": true
+            }
+        ],
+        "description": "El club fue fundado en 1936 como Estrella Roja en Haasdonk cerca de Beveren e inscrito inicialmente en Vlaamsche Voetbal Bond una asociación de fútbol amateur que rivalizaba con la RABF. En 1944 se unen a la Real Federación Belga de Fútbol como FC Red Star Haasdonk y reciben el n.º de matrícula 4068, comenzando a jugar en la categoría más baja de fútbol en la liga provincial de Flandes Occidental. Durante las próximas décadas, el club jugaría regularmente en divisiones provinciales, hasta la serie más baja (Cuarta Provincial). En su 25 aniversario en 1961, el club pudo competir en la máxima serie provincial.",
+        "highlights": [
+            "Temporadas en Primera División: 0",
+            "Temporadas en Segunda División: 5",
+            "Temporadas en Tercera División: 50",
+            "Temporadas en Cuarta División: 2"
+        ],
+        "details": "El producto incluye la sede, el Estadio de Waasland, el primer equipo y las divisiones inferiores ",
+        "reviews": {
+            "href": "#",
+            "average": 4.5,
+            "totalCount": 10
         }
     }
 ]

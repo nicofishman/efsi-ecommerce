@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
-import ProductList from '../components/ProductList';
-import Promos from '../components/Promos';
+import ProductList from '../components/index/ProductList';
+import Promos from '../components/index/Promos';
 
 interface IndexProps {
 

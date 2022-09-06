@@ -4,7 +4,8 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                chacaGreen: '#189647'
+                chacaGreen: '#189647',
+                sacaPurple: '#df99fc'
             }
         }
     },
