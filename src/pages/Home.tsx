@@ -3,11 +3,11 @@ import React, { FC } from 'react';
 import ProductList from '../components/index/ProductList';
 import Promos from '../components/index/Promos';
 
-interface IndexProps {
+interface HomeProps {
 
-};
+}
 
-const Index: FC<IndexProps> = () => {
+const Home: FC<HomeProps> = () => {
     return (
         <>
             <Promos />
@@ -16,4 +16,4 @@ const Index: FC<IndexProps> = () => {
     );
 };
 
-export default Index;
+export default Home;

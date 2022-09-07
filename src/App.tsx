@@ -6,19 +6,19 @@ import {
 } from 'react-router-dom';
 
 import Layout from './pages/common/Layout';
-import Index from './pages/Index';
+import Home from './pages/Home';
 import Producto from './pages/Producto';
 
 interface AppProps {
 
-};
+}
 
 const App: FC<AppProps> = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route element={<Layout/> }>
-                    <Route element={<Index />} path='/'/>
+                    <Route element={<Home />} path='/'/>
                     <Route element={<Producto />} path='/product/:id'/>
                 </Route>
             </Routes>
