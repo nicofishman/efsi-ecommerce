@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import products from '../public/products.json';
-import Breadcrumbs from '../components/producto/Breadcrumbs';
-import Images from '../components/producto/Images';
-import ProductInfo from '../components/producto/ProductInfo';
-import { Product } from '../types';
+import products from '@/public/products.json';
+import Breadcrumbs from '@/components/producto/Breadcrumbs';
+import Images from '@/components/producto/Images';
+import ProductInfo from '@/components/producto/ProductInfo';
+import { Product } from '@/types';
 
 interface ProductoProps {
 

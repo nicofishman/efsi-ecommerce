@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
 
+import { Image } from '@/types';
+
 interface ImagesProps {
-    images: {
-        src: string;
-        alt: string;
-    }[]
+    images: Image[]
 }
 
 const Images: FC<ImagesProps> = ({ images }) => {

@@ -5,9 +5,9 @@ import {
     Route
 } from 'react-router-dom';
 
-import Layout from './pages/common/Layout';
-import Home from './pages/Home';
-import Producto from './pages/Producto';
+import Layout from '@/pages/common/Layout';
+import Home from '@/pages/Home';
+import Producto from '@/pages/Producto';
 
 interface AppProps {
 

@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import products from '../../public/products.json';
+import products from '@/public/products.json';
 
 interface ProductListProps {
 
-};
+}
 
 const ProductList: FC<ProductListProps> = () => {
     return (

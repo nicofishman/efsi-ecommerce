@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { StarIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 
-import { Review } from '../../types';
+import { Review } from '@/types';
 
 interface ReviewsProps {
     reviews: Review;

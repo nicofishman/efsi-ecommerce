@@ -4,11 +4,11 @@ import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@her
 import React, { FC, Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import navigation from '../../public/navigation.json';
-import logo from '../../public/logo.png';
+import navigation from '@/public/navigation.json';
+import logo from '@/public/logo.png';
 interface NavbarProps {
 
-};
+}
 
 const Navbar: FC<NavbarProps> = () => {
     const [open, setOpen] = useState(false);

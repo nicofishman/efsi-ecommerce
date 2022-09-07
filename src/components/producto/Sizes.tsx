@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { RadioGroup } from '@headlessui/react';
 import classNames from 'classnames';
 
-import { Size } from '../../types';
+import { Size } from '@/types';
 
 interface SizesProps {
  sizes: Size[]

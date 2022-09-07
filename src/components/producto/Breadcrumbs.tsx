@@ -1,11 +1,9 @@
 import React, { FC } from 'react';
 
+import { Breadcrumb } from '@/types';
+
 interface BreadcrumbsProps {
-    breadcrumbs: {
-        id: number;
-        name: string;
-        href: string;
-    }[]
+    breadcrumbs: Breadcrumb[]
 }
 
 const Breadcrumbs: FC<BreadcrumbsProps> = ({ breadcrumbs }) => {

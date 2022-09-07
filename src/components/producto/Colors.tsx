@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { RadioGroup } from '@headlessui/react';
 import classNames from 'classnames';
 
-import { Color } from '../../types';
+import { Color } from '@/types';
 
 interface ColorsProps {
     colors: Color[]

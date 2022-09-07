@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 interface PromosProps {
 
-};
+}
 
 const Promos: FC<PromosProps> = () => {
     return (

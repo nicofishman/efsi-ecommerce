@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 
-import { Product } from '../../types';
-
 import Reviews from './Reviews';
 import Colors from './Colors';
 import Sizes from './Sizes';
+
+import { Product } from '@/types';
 
 interface ProductInfoProps {
     product: Product
