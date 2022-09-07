@@ -5,10 +5,12 @@ import React, { FC, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import products from '../public/products.json';
+import Breadcrumbs from '../components/producto/Breadcrumbs';
+import Images from '../components/producto/Images';
 
 interface ProductoProps {
 
-};
+}
 
 const Producto: FC<ProductoProps> = () => {
     const { id } = useParams();
@@ -18,7 +20,7 @@ const Producto: FC<ProductoProps> = () => {
         navigation('/');
 
         return null;
-    };
+    }
 
     const product = products.filter(p => p.id === parseInt(id))[0];
 
@@ -30,26 +32,7 @@ const Producto: FC<ProductoProps> = () => {
             <div className="pt-6">
                 <nav aria-label="Breadcrumb">
                     <ol className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8" role="list">
-                        {product.breadcrumbs.map((breadcrumb) => (
-                            <li key={breadcrumb.id}>
-                                <div className="flex items-center">
-                                    <a className="mr-2 text-sm font-medium text-gray-900" href={breadcrumb.href}>
-                                        {breadcrumb.name}
-                                    </a>
-                                    <svg
-                                        aria-hidden="true"
-                                        className="h-5 w-4 text-gray-300"
-                                        fill="currentColor"
-                                        height={20}
-                                        viewBox="0 0 16 20"
-                                        width={16}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                                    </svg>
-                                </div>
-                            </li>
-                        ))}
+                        <Breadcrumbs breadcrumbs={product.breadcrumbs} />
                         <li className="text-sm">
                             <a aria-current="page" className="font-medium text-gray-500 hover:text-gray-600" href={product.href}>
                                 {product.name}
@@ -59,38 +42,7 @@ const Producto: FC<ProductoProps> = () => {
                 </nav>
 
                 {/* Image gallery */}
-                <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-                    <div className="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
-                        <img
-                            alt={product.images[0].alt}
-                            className="h-full w-full object-cover object-center"
-                            src={product.images[0].src}
-                        />
-                    </div>
-                    <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-                        <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
-                            <img
-                                alt={product.images[1].alt}
-                                className="h-full w-full object-cover object-center"
-                                src={product.images[1].src}
-                            />
-                        </div>
-                        <div className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
-                            <img
-                                alt={product.images[2].alt}
-                                className="h-full w-full object-cover object-center"
-                                src={product.images[2].src}
-                            />
-                        </div>
-                    </div>
-                    <div className="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
-                        <img
-                            alt={product.images[3].alt}
-                            className="h-full w-full object-cover object-center"
-                            src={product.images[3].src}
-                        />
-                    </div>
-                </div>
+                <Images images={product.images} />
 
                 {/* Product info */}
                 <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
@@ -170,7 +122,7 @@ const Producto: FC<ProductoProps> = () => {
                                 <div className="flex items-center justify-between">
                                     <h3 className="text-sm font-medium text-gray-900">Size</h3>
                                     <a className="text-sm font-medium text-indigo-600 hover:text-indigo-500" href="#">
-                    Size guide
+                                        Size guide
                                     </a>
                                 </div>
 
