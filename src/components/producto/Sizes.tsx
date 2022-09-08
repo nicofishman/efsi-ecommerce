@@ -1,15 +1,20 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import { RadioGroup } from '@headlessui/react';
 import classNames from 'classnames';
 
 import { Size } from '@/types';
+import { useProductInfoContext } from '@/context/ProductInfoContext';
 
 interface SizesProps {
  sizes: Size[]
 }
 
 const Sizes: FC<SizesProps> = ({ sizes }) => {
-    const [selectedSize, setSelectedSize] = useState(sizes[2]);
+    const { selectedSize, setSelectedSize } = useProductInfoContext();
+
+    useEffect(() => {
+        setSelectedSize(sizes[0]);
+    }, []);
 
     return (
         <div className="mt-10">

@@ -5,12 +5,17 @@ import Colors from './Colors';
 import Sizes from './Sizes';
 
 import { Product } from '@/types';
+import { useCartContext } from '@/context/CartContext';
+import { useProductInfoContext } from '@/context/ProductInfoContext';
 
 interface ProductInfoProps {
     product: Product
 }
 
 const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
+    const { addToCart } = useCartContext();
+    const { selectedColor, selectedSize } = useProductInfoContext();
+
     return (
         <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
             <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
@@ -35,6 +40,10 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
                     <button
                         className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         type="submit"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            addToCart(product, selectedColor, selectedSize);
+                        }}
                     >
                         Comprar equipo
                     </button>

@@ -1,15 +1,20 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import { RadioGroup } from '@headlessui/react';
 import classNames from 'classnames';
 
 import { Color } from '@/types';
+import { useProductInfoContext } from '@/context/ProductInfoContext';
 
 interface ColorsProps {
     colors: Color[]
 }
 
 const Colors: FC<ColorsProps> = ({ colors }) => {
-    const [selectedColor, setSelectedColor] = useState(colors[0]);
+    const { selectedColor, setSelectedColor } = useProductInfoContext();
+
+    useEffect(() => {
+        setSelectedColor(colors[0]);
+    }, []);
 
     return (
         <div>
