@@ -5,7 +5,7 @@ import { Color, Product, Size } from '@/types';
 interface CartContextType {
     cartProducts: { product: Product; quantity: number }[];
     setCartProducts: (cartProducts: { product: Product; quantity: number }[]) => void;
-    addToCart: (product: Product, color: Color, size: Size) => void;
+    addToCart: (product: Product, color: Color, size: Size, quantity: number) => void;
     removeFromCart: (productId: number) => void;
 }
 
@@ -14,7 +14,7 @@ export const CartContext = createContext<CartContextType | null>(null);
 const CartProvider: FC<PropsWithChildren> = ({ children }) => {
     const [cartProducts, setCartProducts] = useState<{ product: Product; quantity: number }[]>([]);
 
-    const addToCart = (product: Product, color: Color, size: Size) => {
+    const addToCart = (product: Product, color: Color, size: Size, quantity: number) => {
         const productInCart = cartProducts.find((item) => item.product.id === product.id);
 
         if (productInCart) {
@@ -27,7 +27,7 @@ const CartProvider: FC<PropsWithChildren> = ({ children }) => {
                                 colors: [color, ...product.colors],
                                 sizes: [size, ...product.sizes]
                             },
-                            quantity: item.quantity + 1
+                            quantity: item.quantity + quantity
                         };
                     }
 
@@ -41,7 +41,7 @@ const CartProvider: FC<PropsWithChildren> = ({ children }) => {
                     colors: [color, ...product.colors],
                     sizes: [size, ...product.sizes]
                 },
-                quantity: 1
+                quantity
             }]);
         }
     };

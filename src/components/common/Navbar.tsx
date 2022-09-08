@@ -67,9 +67,9 @@ const Navbar: FC<NavbarProps> = () => {
                                         <img
                                             alt=""
                                             className="block h-auto w-5 flex-shrink-0"
-                                            src="https://tailwindui.com/img/flags/flag-canada.svg"
+                                            src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg"
                                         />
-                                        <span className="ml-3 block text-sm font-medium">CAD</span>
+                                        <span className="ml-3 block text-sm font-medium">ARG</span>
                                         <span className="sr-only">, change currency</span>
                                     </a>
                                 </div>

@@ -1,4 +1,4 @@
-import React, { createContext, FC, PropsWithChildren, useContext, useMemo, useState } from 'react';
+import React, { createContext, Dispatch, FC, PropsWithChildren, SetStateAction, useContext, useEffect, useMemo, useState } from 'react';
 
 import { Color, Size } from '@/types';
 interface ProductInfoContextType {
@@ -6,6 +6,8 @@ interface ProductInfoContextType {
     setSelectedColor: (selectedColor: Color) => void;
     selectedSize: Size;
     setSelectedSize: (selectedSize: Size) => void;
+    quantity: number;
+    setQuantity: Dispatch<SetStateAction<number>>;
 }
 
 export const ProductInfoContext = createContext<ProductInfoContextType | null >(null);
@@ -21,15 +23,22 @@ const ProductInfoProvider: FC<PropsWithChildren> = ({ children }) => {
         name: '',
         inStock: true
     });
+    const [quantity, setQuantity] = useState<number>(0);
+
+    useEffect(() => {
+        console.log(quantity);
+    }, [quantity]);
 
     const value: ProductInfoContextType = useMemo(() => {
         return {
             selectedColor,
             setSelectedColor,
             selectedSize,
-            setSelectedSize
+            setSelectedSize,
+            quantity,
+            setQuantity
         };
-    }, [selectedColor, selectedSize]);
+    }, [selectedColor, selectedSize, quantity]);
 
     return (
         <ProductInfoContext.Provider value={value}>

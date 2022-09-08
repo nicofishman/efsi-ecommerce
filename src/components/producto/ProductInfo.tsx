@@ -7,6 +7,7 @@ import Sizes from './Sizes';
 import { Product } from '@/types';
 import { useCartContext } from '@/context/CartContext';
 import { useProductInfoContext } from '@/context/ProductInfoContext';
+import QuantitySelector from '@/components/producto/QuantitySelector';
 
 interface ProductInfoProps {
     product: Product
@@ -14,7 +15,7 @@ interface ProductInfoProps {
 
 const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
     const { addToCart } = useCartContext();
-    const { selectedColor, selectedSize } = useProductInfoContext();
+    const { selectedColor, selectedSize, quantity } = useProductInfoContext();
 
     return (
         <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
@@ -37,12 +38,14 @@ const ProductInfo: FC<ProductInfoProps> = ({ product }) => {
                     {/* Sizes */}
                     <Sizes sizes={product.sizes}/>
 
+                    <QuantitySelector />
+
                     <button
                         className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         type="submit"
                         onClick={(e) => {
                             e.preventDefault();
-                            addToCart(product, selectedColor, selectedSize);
+                            addToCart(product, selectedColor, selectedSize, quantity);
                         }}
                     >
                         Comprar equipo
