@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Nueva Chicago",
-        "price": "2 BTC",
+        "price": 10,
         "href": "#",
         "images": [
             {
@@ -89,7 +89,7 @@
     {
         "id": 2,
         "name": "Sacachispas",
-        "price": "10 ₪",
+        "price": 6,
         "href": "#",
         "images": [
             {
@@ -176,7 +176,7 @@
     {
         "id": 3,
         "name": "Waasland",
-        "price": "6 ﷼",
+        "price": 22,
         "href": "#",
         "images": [
             {

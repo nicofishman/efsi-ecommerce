@@ -1,6 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import React, { FC, Fragment } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/solid';
+import classNames from 'classnames';
 
 import { useCartContext } from '@/context/CartContext';
 
@@ -75,9 +76,19 @@ const CartSlide: FC<CartSlideProps> = ({ open, setOpen }) => {
                                                                             <h3>
                                                                                 <a href={product.href}>{product.name}</a>
                                                                             </h3>
-                                                                            <p className="ml-4">{product.price}</p>
+                                                                            <p className="ml-4">{`$${product.price}`}</p>
                                                                         </div>
-                                                                        <p className="mt-1 text-sm text-gray-500">{product.colors[0].name}</p>
+                                                                        <div className='flex flex-row items-center gap-1'>
+                                                                            <span
+                                                                                aria-hidden="true"
+                                                                                className={classNames(
+                                                                                    product.colors[0].class,
+                                                                                    'h-4 w-4 border-2 border-black border-opacity-10 mt-1 rounded-full'
+                                                                                )}
+                                                                                style={{ backgroundColor: product.colors[0].color }}
+                                                                            />
+                                                                            <p className="mt-1 text-sm text-gray-500">{product.colors[0].name}</p>
+                                                                        </div>
                                                                         <p className="mt-1 text-sm text-gray-500">{product.sizes[0].name}</p>
                                                                     </div>
                                                                     <div className="flex flex-1 items-end justify-between text-sm">
@@ -104,7 +115,7 @@ const CartSlide: FC<CartSlideProps> = ({ open, setOpen }) => {
                                         <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                                             <div className="flex justify-between text-base font-medium text-gray-900">
                                                 <p>Subtotal</p>
-                                                <p>$262.00</p>
+                                                <p>{`$${cartProducts.map(c => c.product.price * c.quantity).reduce((a, b) => a + b, 0)}`}</p>
                                             </div>
                                             <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                             <div className="mt-6">

@@ -13,7 +13,7 @@ const Sizes: FC<SizesProps> = ({ sizes }) => {
     const { selectedSize, setSelectedSize } = useProductInfoContext();
 
     useEffect(() => {
-        setSelectedSize(sizes[0]);
+        setSelectedSize(sizes.filter(s => s.inStock)[0]);
     }, []);
 
     return (
