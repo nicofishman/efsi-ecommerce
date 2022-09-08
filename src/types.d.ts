@@ -41,3 +41,28 @@ export interface Product {
     details: string;
     reviews: Review;
 }
+
+interface Featured {
+    name: string;
+    href: string;
+    imageSrc: string;
+    imageAlt: string;
+}
+
+interface Section {
+    id: string;
+    name: string;
+    items: {name: string; href: string}[];
+}
+
+interface Category {
+    id: string;
+    name: string;
+    featured: Featured[]
+    sections: Section[];
+}
+
+export interface Navigation {
+    categories: Category[]
+    pages: {name: string; href: string}[];
+}
