@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { ShoppingBagIcon } from '@heroicons/react/24/outline';
 
 import CartSlide from '@/components/navbar/CartSlide';
+import { useCartContext } from '@/context/CartContext';
 
 interface CartProps {
 
@@ -9,6 +10,7 @@ interface CartProps {
 
 const Cart: FC<CartProps> = () => {
     const [open, setOpen] = useState<boolean>(false);
+    const { cartProducts } = useCartContext();
 
     return (
         <>
@@ -19,7 +21,7 @@ const Cart: FC<CartProps> = () => {
                         className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                         onClick={() => setOpen(true)}
                     />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartProducts.map(c => c.quantity).reduce((a, b) => a + b, 0)}</span>
                     <span className="sr-only">items in cart, view bag</span>
                 </a>
             </div>
