@@ -126,18 +126,18 @@ const CartSlide: FC<CartSlideProps> = ({ open, setOpen }) => {
                                                     Checkout
                                                 </a>
                                             </div>
-                                            <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+                                            <div className="mt-2 gap-2 flex flex-col justify-center text-center text-sm text-gray-500">
                                                 <p>
                                                     or
-                                                    <button
-                                                        className="font-medium text-indigo-600 hover:text-indigo-500"
-                                                        type="button"
-                                                        onClick={() => setOpen(false)}
-                                                    >
-                                                        Continue Shopping
-                                                        <span aria-hidden="true"> &rarr;</span>
-                                                    </button>
                                                 </p>
+                                                <button
+                                                    className="font-medium text-indigo-600 hover:text-indigo-500"
+                                                    type="button"
+                                                    onClick={() => setOpen(false)}
+                                                >
+                                                        Continue Shopping
+                                                    <span aria-hidden="true"> &rarr;</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
