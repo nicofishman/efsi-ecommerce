@@ -16,7 +16,7 @@ const CartProvider: FC<PropsWithChildren> = ({ children }) => {
     const [cartProducts, setCartProducts] = useState<ProductForCart[]>([]);
 
     const addToCart = (product: Product, color: Color, size: Size, quantity: number) => {
-        const sku = createSku(product, color, size, quantity);
+        const sku = createSku(product, color, size);
 
         const indexOfProductInCart = cartProducts.map(item => item.sku).indexOf(sku);
 
