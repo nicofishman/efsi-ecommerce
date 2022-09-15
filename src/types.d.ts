@@ -66,3 +66,5 @@ export interface Navigation {
     categories: Category[]
     pages: {name: string; href: string}[];
 }
+
+export type ProductForCart = Omit<Product, 'colors'|'sizes'> & {sku: string; quantity: number, color: Color, size: Size};

@@ -1,32 +1,31 @@
 import React, { createContext, FC, PropsWithChildren, useContext, useMemo, useState } from 'react';
 
-import { Color, Product, Size } from '@/types';
+import { Color, Product, ProductForCart, Size } from '@/types';
+import { createSku } from '@/utils/createSku';
 
 interface CartContextType {
-    cartProducts: { product: Product; quantity: number }[];
-    setCartProducts: (cartProducts: { product: Product; quantity: number }[]) => void;
+    cartProducts: ProductForCart[];
+    setCartProducts: (cartProducts: ProductForCart[]) => void;
     addToCart: (product: Product, color: Color, size: Size, quantity: number) => void;
-    removeFromCart: (productId: number) => void;
+    removeFromCart: (sku: string) => void;
 }
 
 export const CartContext = createContext<CartContextType | null>(null);
 
 const CartProvider: FC<PropsWithChildren> = ({ children }) => {
-    const [cartProducts, setCartProducts] = useState<{ product: Product; quantity: number }[]>([]);
+    const [cartProducts, setCartProducts] = useState<ProductForCart[]>([]);
 
     const addToCart = (product: Product, color: Color, size: Size, quantity: number) => {
-        const productInCart = cartProducts.find((item) => item.product.id === product.id);
+        const sku = createSku(product, color, size, quantity);
 
-        if (productInCart) {
+        const indexOfProductInCart = cartProducts.map(item => item.sku).indexOf(sku);
+
+        if (indexOfProductInCart !== -1) {
             setCartProducts(
-                cartProducts.map((item) => {
-                    if (item.product.id === product.id) {
+                cartProducts.map((item, index) => {
+                    if (index === indexOfProductInCart) {
                         return {
-                            product: {
-                                ...item.product,
-                                colors: [color, ...product.colors],
-                                sizes: [size, ...product.sizes]
-                            },
+                            ...item,
                             quantity: item.quantity + quantity
                         };
                     }
@@ -35,19 +34,21 @@ const CartProvider: FC<PropsWithChildren> = ({ children }) => {
                 })
             );
         } else {
-            setCartProducts([...cartProducts, {
-                product: {
+            setCartProducts([
+                ...cartProducts,
+                {
+                    sku,
                     ...product,
-                    colors: [color, ...product.colors],
-                    sizes: [size, ...product.sizes]
-                },
-                quantity
-            }]);
+                    color,
+                    size,
+                    quantity
+                }
+            ]);
         }
     };
 
-    const removeFromCart = (productId: number) => {
-        setCartProducts(cartProducts.filter((item) => item.product.id !== productId));
+    const removeFromCart = (sku: string) => {
+        setCartProducts(cartProducts.filter((item) => item.sku !== sku));
     };
 
     const value: CartContextType = useMemo(() => {

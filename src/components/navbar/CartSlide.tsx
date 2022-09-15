@@ -60,8 +60,8 @@ const CartSlide: FC<CartSlideProps> = ({ open, setOpen }) => {
                                             <div className="mt-8">
                                                 <div className="flow-root">
                                                     <ul className="-my-6 divide-y divide-gray-200" role="list">
-                                                        {cartProducts.map(({ product, quantity }) => (
-                                                            <li key={product.id} className="flex py-6">
+                                                        {cartProducts.map((product) => (
+                                                            <li key={product.sku} className="flex py-6">
                                                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                                     <img
                                                                         alt={product.images[0].alt}
@@ -82,23 +82,23 @@ const CartSlide: FC<CartSlideProps> = ({ open, setOpen }) => {
                                                                             <span
                                                                                 aria-hidden="true"
                                                                                 className={classNames(
-                                                                                    product.colors[0].class,
+                                                                                    product.color.class,
                                                                                     'h-4 w-4 border-2 border-black border-opacity-10 mt-1 rounded-full'
                                                                                 )}
-                                                                                style={{ backgroundColor: product.colors[0].color }}
+                                                                                style={{ backgroundColor: product.color.color }}
                                                                             />
-                                                                            <p className="mt-1 text-sm text-gray-500">{product.colors[0].name}</p>
+                                                                            <p className="mt-1 text-sm text-gray-500">{product.color.name}</p>
                                                                         </div>
-                                                                        <p className="mt-1 text-sm text-gray-500">{product.sizes[0].name}</p>
+                                                                        <p className="mt-1 text-sm text-gray-500">{product.size.name}</p>
                                                                     </div>
                                                                     <div className="flex flex-1 items-end justify-between text-sm">
-                                                                        <p className="text-gray-500">Qty {quantity}</p>
+                                                                        <p className="text-gray-500">Qty {product.quantity}</p>
 
                                                                         <div className="flex">
                                                                             <button
                                                                                 className="font-medium text-indigo-600 hover:text-indigo-500"
                                                                                 type="button"
-                                                                                onClick={() => removeFromCart(product.id)}
+                                                                                onClick={() => removeFromCart(product.sku)}
                                                                             >
                                                                                 Remove
                                                                             </button>
@@ -115,7 +115,7 @@ const CartSlide: FC<CartSlideProps> = ({ open, setOpen }) => {
                                         <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                                             <div className="flex justify-between text-base font-medium text-gray-900">
                                                 <p>Subtotal</p>
-                                                <p>{`$${cartProducts.map(c => c.product.price * c.quantity).reduce((a, b) => a + b, 0)}`}</p>
+                                                <p>{`$${cartProducts.map(c => c.price * c.quantity).reduce((a, b) => a + b, 0)}`}</p>
                                             </div>
                                             <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                             <div className="mt-6">
