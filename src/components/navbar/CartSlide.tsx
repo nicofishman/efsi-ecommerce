@@ -73,10 +73,11 @@ const CartSlide: FC<CartSlideProps> = ({ open, setOpen }) => {
                                                                 <div className="ml-4 flex flex-1 flex-col">
                                                                     <div>
                                                                         <div className="flex justify-between text-base font-medium text-gray-900">
-                                                                            <h3>
-                                                                                <a href={product.href}>{product.name}</a>
-                                                                            </h3>
+                                                                            <p className='whitespace-nowrap overflow-ellipsis'>{product.name}</p>
                                                                             <p className="ml-4">{`$${product.price}`}</p>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p className="mt-1 text-sm text-gray-500">{product.sku}</p>
                                                                         </div>
                                                                         <div className='flex flex-row items-center gap-1'>
                                                                             <span
