@@ -12,7 +12,7 @@ const Images: FC<ImagesProps> = ({ images }) => {
             <div className="aspect-[3/4] hidden overflow-hidden rounded-lg lg:block">
                 <img
                     alt={images[0].alt}
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-contain object-center"
                     src={images[0].src}
                 />
             </div>
@@ -20,7 +20,7 @@ const Images: FC<ImagesProps> = ({ images }) => {
                 <div className="aspect-[3/2] overflow-hidden rounded-lg">
                     <img
                         alt={images[1].alt}
-                        className="h-full w-full object-cover object-center"
+                        className="h-full w-full object-contain object-center"
                         src={images[1].src}
                     />
                 </div>

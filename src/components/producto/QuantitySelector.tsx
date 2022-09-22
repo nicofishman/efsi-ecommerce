@@ -15,11 +15,11 @@ const QuantitySelector: FC<QuantitySelectorProps> = () => {
                 <button className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
                     onClick={(e) => {
                         e.preventDefault();
-                        setQuantity((prev) => prev - 1);
+                        setQuantity((prev) => prev - 1 >= 1 ? prev - 1 : prev);
                     }}>
                     <span className="m-auto text-2xl font-thin">−</span>
                 </button>
-                <span className="outline-none text-center focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center justify-center text-gray-700  outline-none"
+                <span className="focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center justify-center text-gray-700  outline-none"
                 >{quantity}</span>
                 <button className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
                     onClick={(e) => {

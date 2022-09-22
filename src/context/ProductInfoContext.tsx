@@ -1,4 +1,4 @@
-import React, { createContext, Dispatch, FC, PropsWithChildren, SetStateAction, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, Dispatch, FC, PropsWithChildren, SetStateAction, useContext, useMemo, useState } from 'react';
 
 import { Color, Size } from '@/types';
 interface ProductInfoContextType {
@@ -23,11 +23,7 @@ const ProductInfoProvider: FC<PropsWithChildren> = ({ children }) => {
         name: '',
         inStock: true
     });
-    const [quantity, setQuantity] = useState<number>(0);
-
-    useEffect(() => {
-        console.log(quantity);
-    }, [quantity]);
+    const [quantity, setQuantity] = useState<number>(1);
 
     const value: ProductInfoContextType = useMemo(() => {
         return {
