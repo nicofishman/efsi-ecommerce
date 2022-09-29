@@ -23,7 +23,7 @@ const ProductInfoProvider: FC<PropsWithChildren> = ({ children }) => {
         name: '',
         inStock: true
     });
-    const [quantity, setQuantity] = useState<number>(0);
+    const [quantity, setQuantity] = useState<number>(1);
 
     useEffect(() => {
         console.log(quantity);
