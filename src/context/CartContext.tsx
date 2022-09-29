@@ -86,7 +86,10 @@ const CartProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     const removeFromCart = (sku: string) => {
-        setCartProducts(cartProducts.filter((item) => item.sku !== sku));
+        const newCart = cartProducts.filter((product) => product.sku !== sku);
+
+        setCartProducts(newCart);
+        if (!newCart.length) window.localStorage.removeItem('cartProducts');
     };
 
     const value: CartContextType = useMemo(() => {
