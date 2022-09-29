@@ -1,7 +1,8 @@
-import React, { createContext, FC, PropsWithChildren, useContext, useMemo, useState } from 'react';
+import React, { createContext, FC, PropsWithChildren, useContext, useEffect, useMemo, useState } from 'react';
 
+import ProductsJson from '@/public/products.json';
 import { Color, Product, ProductForCart, Size } from '@/types';
-import { createSku } from '@/utils/createSku';
+import { createSku, decodeSku, removeQuantityFromSku } from '@/utils/sku';
 
 interface CartContextType {
     cartProducts: ProductForCart[];
@@ -15,10 +16,46 @@ export const CartContext = createContext<CartContextType | null>(null);
 const CartProvider: FC<PropsWithChildren> = ({ children }) => {
     const [cartProducts, setCartProducts] = useState<ProductForCart[]>([]);
 
+    useEffect(() => {
+        const localStorageCart = window.localStorage.getItem('cartProducts');
+
+        console.log(localStorageCart);
+
+        if (!localStorageCart) return;
+
+        const skus: string[] = JSON.parse(localStorageCart);
+
+        const products: ProductForCart[] = skus.map((sku) => {
+            const { productId, color, size, quantity } = decodeSku(sku);
+            const product = ProductsJson.find((product) => product.id === productId)!;
+            const colorProduct = product.colors.find((c) => c.color === color)!;
+            const sizeProduct = product.sizes.find((s) => s.name === size)!;
+
+            return {
+                ...product,
+                sku,
+                color: colorProduct,
+                size: sizeProduct,
+                quantity
+            };
+        });
+
+        setCartProducts(products);
+    }, []);
+
+    useEffect(() => {
+        if (!cartProducts.length) return;
+
+        const skus = cartProducts.map((product) => product.sku);
+
+        window.localStorage.setItem('cartProducts', JSON.stringify(skus));
+        console.log(skus);
+    }, [cartProducts]);
+
     const addToCart = (product: Product, color: Color, size: Size, quantity: number) => {
         const sku = createSku(product, color, size);
 
-        const indexOfProductInCart = cartProducts.map(item => item.sku).indexOf(sku);
+        const indexOfProductInCart = cartProducts.map(item => removeQuantityFromSku(item.sku)).indexOf(sku);
 
         if (indexOfProductInCart !== -1) {
             setCartProducts(
@@ -26,6 +63,7 @@ const CartProvider: FC<PropsWithChildren> = ({ children }) => {
                     if (index === indexOfProductInCart) {
                         return {
                             ...item,
+                            sku: `${sku}-${item.quantity + quantity}`,
                             quantity: item.quantity + quantity
                         };
                     }
@@ -37,7 +75,7 @@ const CartProvider: FC<PropsWithChildren> = ({ children }) => {
             setCartProducts([
                 ...cartProducts,
                 {
-                    sku,
+                    sku: `${sku}-${quantity}`,
                     ...product,
                     color,
                     size,
