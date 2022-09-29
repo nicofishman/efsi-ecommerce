@@ -15,7 +15,7 @@ const QuantitySelector: FC<QuantitySelectorProps> = () => {
                 <button className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
                     onClick={(e) => {
                         e.preventDefault();
-                        setQuantity((prev) => prev - 1);
+                        if (quantity > 2) setQuantity((prev) => prev - 1);
                     }}>
                     <span className="m-auto text-2xl font-thin">−</span>
                 </button>
